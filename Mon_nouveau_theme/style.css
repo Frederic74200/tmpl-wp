@@ -1,0 +1,580 @@
+/*
+Theme Name: Mon_nouveau_theme
+
+Author:Frédéric 74200
+
+Description: mon thème
+
+*/
+
+
+/* Général ============================================================================================================*/
+/* polices */
+@font-face {
+    font-family: 'Open Sans';
+    src: url('./assets/fonts/OpenSans-Regular.ttf');
+
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open bold';
+    src: url('./assets/fonts/OpenSans-Bold.ttf');
+
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+.file {
+
+    display: none;
+}
+
+
+/* variables */
+
+:root {
+    /* color */
+    --fnt-1: #fb9742;
+    --fnt-2: #b4b4b4;
+    --fnt-3: #4b4b4b;
+    --fnt-4: #ffffff;
+
+    /* background */
+    --bg-1: #7bc0c0;
+    --bg-2: #222;
+
+
+    /* linear */
+    --lin-1: linear-gradient(to bottom left, #222222 85%, #7bc0c0 20%);
+    --lin-2: linear-gradient(to bottom left, #ffffff 90%, #7bc0c0 75%);
+    --lin-3: linear-gradient(to bottom left, #7bc0c0 70%, #fb9742 30%);
+    --lin-4: linear-gradient(to bottom left, #fb9742 70%, #7bc0c0 30%);
+
+
+}
+
+/* globales */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+
+    font-size: 62.5%;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    font-size: 1.6rem;
+    font-family: 'Open Sans';
+    margin: 0;
+    color: var(--fnt-3);
+    background: var(--lin-2);
+    background-attachment: fixed;
+}
+
+
+.dark-mode {
+    background: var(--lin-1);
+    background-attachment: fixed;
+    color: var(--fnt-2);
+}
+
+h1,
+h2,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-align: center;
+    letter-spacing: 1rem;
+    color: var(--fnt-1);
+    font-family: "open bold";
+}
+
+a,
+a:visited {
+    color: var(--fnt-1);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+nav ul,
+menu ul {
+    list-style-type: none;
+    color: var(--fnt-4);
+}
+
+nav ul a,
+menu ul li a {
+    font-family: "open bold";
+    color: var(--fnt-4);
+    font-size: 1.5rem;
+    letter-spacing: 0.3rem;
+}
+
+nav ul a:visited,
+menu ul li a:visited {
+    color: var(--fnt-4);
+}
+
+
+/* header ----------------------------------------------------------------------------------------- */
+
+header {
+    width: 100vw;
+
+}
+
+
+/* logo */
+#logo {
+    grid-area: logo;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#logo img {
+    display: block;
+    object-fit: cover;
+    max-height: 14vh;
+    max-width: 14vh;
+
+}
+
+/* tilte */
+.sitename,
+.sitedesc {
+    font-family: "open bold";
+    background: var(--lin-3);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.sitename {
+    font-size: 4.5rem;
+    padding: 0;
+    margin: 0;
+
+}
+
+.sitedesc {
+    font-size: 1.5rem;
+    padding: 0;
+    margin: 0;
+
+}
+
+/* btn */
+
+
+#toggle-mode {
+    height: 4vh;
+    width: 4vh;
+    background-image: url(http://localhost/wordpress-6.4.3-fr_FR/wordpress/wp-content/themes/Mon_nouveau_theme/assets/img/darkmode1.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+
+}
+
+#toggle-mode.dark {
+    filter: grayscale(100%) invert(100%);
+
+}
+
+/* nav */
+/* menu burger .............................................*/
+#menu-toggle {
+    display: none;
+    height: 48px;
+    width: 48px;
+    cursor: pointer;
+    background: transparent;
+    overflow: hidden;
+    margin: 2%;
+
+}
+
+#menu-toggle .bar {
+    display: none;
+    height: 8px;
+    width: 48px;
+    margin-bottom: 8px;
+    background: var(--bg-1);
+    transition: 0.3s ease-in-out;
+
+}
+
+
+
+/* main ------------------------------------------------------------------------------------------- */
+
+/* sidebar .............................................*/
+
+.sidebar {
+    padding: 3%;
+    background: var(--lin-3);
+    margin-top: -1vh;
+    border-width: 1px;
+    border-style: solid;
+    border-image: var(--lin-4) 1;
+}
+
+.h2Sidebar {
+    font-size: 2rem;
+    color: var(--fnt-4);
+}
+
+.post {
+    background: var(--lin-4);
+    margin: 0 1vw 1vh 1vw;
+    max-height: 15vh;
+    border: 1px solid #ffffff55;
+}
+
+.post h3 {
+    background: transparent;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 1%;
+
+}
+
+.post h3 a {
+    color: var(--fnt-4);
+    font-size: 1.2rem;
+    letter-spacing: normal;
+}
+
+.post-aside {
+    text-align: center;
+    border-top: var(--fnt-1) solid 1px;
+    background-color: var(--fnt-4);
+    padding: 1%;
+    font-size: 1rem;
+
+}
+
+.post-content {
+    background-color: var(--fnt-4);
+    padding: 3%;
+}
+
+.post-content.dark-mode,
+.post-aside.dark-mode {
+    background-color: var(--bg-2);
+}
+
+/* footer --------------------------------------------------------------------------------- */
+footer ul {
+    border-top: solid 1px var(--fnt-1);
+    margin-left: 13%;
+}
+
+#go-top {
+    height: 40px;
+    width: 40px;
+    background: var(--bg-1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+#go-top a {
+    color: var(--fnt-4);
+    font-family: "open bold";
+    font-size: 30px;
+    margin-bottom: 3px;
+    padding: 0;
+
+}
+
+/* paysage ============================================================================================================ */
+
+@media (orientation: landscape) {
+
+    body {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        grid-template-rows: 4fr 15fr 1fr;
+        grid-template-areas: "header header"
+            "main sidebar"
+            "footer footer";
+    }
+
+
+    /* header ----------------------------------------------------------------------------------------- */
+
+    header {
+        grid-area: header;
+        height: 20vh;
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: 15fr 5fr;
+        grid-template-areas: "logo title btn"
+            "nav nav nav";
+        margin-bottom: 3vh;
+    }
+}
+
+
+
+#logo {
+    grid-area: logo;
+
+
+}
+
+#sitetiltle {
+    grid-area: title;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+
+#btn-area {
+    grid-area: btn;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center
+}
+
+nav {
+    grid-area: nav;
+    background-color: var(--bg-1);
+    border-bottom: 1px solid var(--fnt-1);
+    border-top: 1px solid var(--fnt-1);
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 15vw;
+}
+
+
+
+nav ul li ul {
+    display: none;
+}
+
+/* main ------------------------------------------------------------------------------------------- */
+main {
+    grid-area: main;
+
+    margin-left: 25%;
+    padding: 3rem;
+}
+
+.sidebar {
+    grid-area: sidebar;
+}
+
+
+
+/* footer  ---------------------------------------------------------------------------------------- */
+
+#go-top {
+    position: relative;
+    right: -90%;
+    bottom: 350%;
+}
+
+footer {
+    grid-area: footer;
+}
+
+
+
+footer ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+
+}
+
+
+
+#foot-menu ul li a {
+    margin-right: 2.5rem;
+    color: var(--bg-1);
+    font-size: 1.1rem;
+}
+
+
+
+
+
+
+
+
+/* portrait ============================================================================================================ */
+
+@media (orientation: portrait) {
+
+
+    body {
+
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 4fr 14fr 1fr 1fr;
+        grid-template-areas: "header "
+            "main "
+            "footer ";
+    }
+
+    /* header ----------------------------------------------------------------------------------------- */
+    header {
+        grid-area: header;
+        display: grid;
+        height: 15vh;
+        grid-template-columns: 2fr 4fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "logo title btn btn";
+
+        margin-bottom: 3vh;
+        border-bottom: solid 3px var(--bg-1);
+    }
+
+
+    #logo {
+        grid-area: logo;
+
+    }
+
+    #sitetiltle {
+        grid-area: title;
+
+    }
+
+    .sitename {
+        font-size: 3rem;
+    }
+
+    .sitedesc {
+        display: none;
+    }
+
+    #btn-area {
+        grid-area: btn;
+        display: flex;
+        justify-content: space-around;
+        align-items: center
+    }
+
+    /* menu burger .............................................*/
+    #menu-toggle {
+        display: block;
+
+    }
+
+    #menu-toggle .bar {
+        display: block;
+
+
+    }
+
+    nav {
+        display: none;
+        background-color: var(--bg-1);
+        width: 100vw;
+        height: 80vh;
+        z-index: 0;
+        position: absolute;
+        top: 20vh;
+        left: 0;
+
+
+    }
+
+    nav ul {
+        display: block;
+
+    }
+
+    nav ul li {
+        margin-bottom: 2%;
+        font-size: 2.5rem;
+    }
+
+    nav ul li ul {
+        display: block;
+        padding-left: 15%;
+        list-style-type: square;
+
+    }
+
+    nav ul li ul li {
+        font-size: 1.3rem;
+    }
+
+
+    nav.active {
+        display: block;
+
+    }
+
+    /* main ------------------------------------------------------------------------------------------- */
+
+    main {
+        grid-area: main;
+        margin: 0;
+        padding: 3rem;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+
+    /* footer  ---------------------------------------------------------------------------------------- */
+
+    #go-top {
+
+        position: relative;
+        right: -80%;
+        bottom: 350%;
+    }
+
+    footer {
+        grid-area: footer;
+    }
+
+
+
+    footer ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: right;
+        text-align: right;
+    }
+
+
+    #foot-menu ul li a {
+        margin-right: 2rem;
+        color: var(--bg-1);
+        font-size: 0.8rem;
+    }
+
+
+
+
+
+}

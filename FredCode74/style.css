@@ -1,0 +1,205 @@
+/*
+Theme Name: FredCode74
+
+Author:Frédéric 74200
+
+Description: mon thème
+
+*/
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('./assets/fonts/OpenSans Regular .ttf;') format('ttf');
+
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('./assets/fonts/Lato-Regular.woff2') format('woff2');
+
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --base-1: linear-gradient(#e24477, #fb9742);
+    --base-2: linear-gradient(#1dbb88, #0468bd);
+
+    --base-1-reverse: linear-gradient(#fb9742, #e24477);
+
+    --base-font: #ffffff;
+    --base-transp: transparent;
+    --base-black-rgba: rgba(0, 0, 0, 0.1);
+    --base-white-rgba: rgba(255, 255, 255, 0.1);
+
+
+
+    --base-6: #fb9742;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+
+body {
+    background: var(--base-1);
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Open Sans';
+    color: var(--base-font);
+
+    display: grid;
+    grid-template-columns: 1fr 4fr 2fr;
+    grid-template-rows: 7fr 1fr;
+    grid-template-areas: "a b c"
+        "d d d";
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Lato';
+    text-align: center;
+    letter-spacing: 1rem;
+    margin: 0 10%;
+    padding: 1%;
+    font-weight: 900;
+    background: var(--base-1-reverse);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+
+
+
+.main-title {
+    background-color: var(--base-font);
+
+}
+
+
+a,
+a:visited {
+    color: var(--base-font);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+
+header {
+
+    grid-area: a;
+    grid-template-rows: 2fr 3fr;
+    grid-template-areas: "a"
+        "b";
+}
+
+body>header>div {
+
+    grid-area: a;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo img {
+    object-fit: cover;
+    /* ou cover */
+    max-height: 15vh;
+    max-width: 15vh;
+
+
+}
+
+body>header>nav {
+    grid-area: b;
+}
+
+
+header nav ul {
+    list-style-type: none;
+    display: block;
+    min-height: 8vh;
+}
+
+
+header nav ul li>ul {
+    display: none;
+    margin: 5%;
+    padding: 0;
+
+}
+
+header nav ul li:hover>ul {
+    display: block;
+}
+
+
+header nav li {
+    margin: 5% 2%;
+    line-height: 2.5rem;
+    text-align: center;
+    background-color: var(--base-black-rgba);
+    border-width: 3px;
+    border-style: solid;
+    border-image: var(--base-1-reverse) 1;
+}
+
+
+header nav ul li:hover {
+
+    background-color: var(--base-white-rgba);
+    border-width: 3px;
+    border-style: solid;
+    border-image: var(--base-1) 1;
+}
+
+
+main {
+    grid-area: b;
+    padding: 5%;
+}
+
+article {
+    border-width: 3px;
+    border-style: solid;
+    border-image: var(--base-1-reverse) 1;
+}
+
+section {
+    padding: 5%;
+    text-align: justify;
+    background: var(--base-black-rgba);
+}
+
+
+
+
+
+
+aside {
+    grid-area: c;
+}
+
+footer {
+    grid-area: d;
+
+    background: var(--base-1-reverse);
+    border-top-width: 3px;
+    border-style: solid;
+    border-image: var(--base-1) 1;
+}
