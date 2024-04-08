@@ -28,6 +28,16 @@ function afficher_icone_site()
 }
 
 
+register_sidebar(array(
+    'id' => 'blog-sidebar',
+    'name' => 'Blog',
+));
+
+
+
+// débloquer fonctions dans le backoffice 
+
+add_theme_support('post-thumbnails');
 
 // Gestion des menus --------------------------------------------------------- 
 add_action('init', 'enregistre_mon_menu');

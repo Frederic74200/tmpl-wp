@@ -21,6 +21,7 @@
         </div>
         <div id="btn-area">
             <div id="toggle-mode"></div>
+            <?php get_search_form(); ?>
             <div id="menu-toggle">
                 <div class="bar"></div>
                 <div class="bar"></div>
@@ -32,6 +33,11 @@
     </header>
 
     <aside class="sidebar">
+        <ul>
+            <?php dynamic_sidebar('blog-sidebar'); ?>
+        </ul>
+
+
         <h2 class="h2Sidebar">Les derniers articles</h2>
 
         <?php

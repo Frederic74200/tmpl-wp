@@ -1,0 +1,18 @@
+{
+    "name": "fchaput/mon-premier-plugin",
+    "description": "Mon premier plugin",
+    "type": "wordpress-plugin",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Fchaput\\MonPremierPlugin\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Frederic74200",
+            "email": "120395976+Frederic74200@users.noreply.github.com"
+        }
+    ],
+    "require": {}
+}
